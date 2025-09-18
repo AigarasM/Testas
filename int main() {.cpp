@@ -53,5 +53,17 @@ int main() {
     git branch -M main
     git push -u origin main
 
+  - uses: actions/checkout@v4
+  - name: Generate configure script
+    run: autoreconf -i
+  - name: configure
+    run: ./configure
+  - name: make
+    run: make
+  - name: make check
+    run: make check
+  - name: make distcheck
+    run: make distcheck
+
 
 }
